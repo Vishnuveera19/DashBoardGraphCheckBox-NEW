@@ -195,12 +195,11 @@ import Shiftpatterns0009 from "./components/masterrols/emshiftpatern";
 import LeaveSetup from "./components/masterrols/leavesetup";
 import Leavesettlement from "./components/masterrols/Leavesettlement";
 import ChatbotNew from "./components/ChatbotNew/ChatbotNew";
-
-
 import GraphCkeckBox1 from "./components/dashboredsss/GraphCkeckBox";
 import Dashboard from "./components/dashboredsss/DashBoard";
 import App001 from "./components/spreadGrid";
 import NewDailyTimeCard1 from "./components/DailyTimeCard/NewDailyTimeCard";
+import GraphCheckBox1 from "./components/dashboredsss/GraphCkeckBox";
 
 const DashboardWrapper = () => {
   const location = useLocation();
@@ -529,18 +528,12 @@ root.render(
           <Route path="/YearEndTable" element={<YearEndTable />}></Route>
           <Route path="/Sample1" element={<Sample1 />}></Route>
 
-          <Route
-            path="/TempshiftdetailsTables"
-            element={<TempshiftdetailsTables />}></Route>
-          <Route
-            path="/TempShiftDetailsForm"
-            element={<TempShiftDetailsForm />}></Route>
+          <Route path="/TempshiftdetailsTables" element={<TempshiftdetailsTables />}></Route>
+          <Route path="/TempShiftDetailsForm" element={<TempShiftDetailsForm />}></Route>
 
           <Route path="/Paycalc" element={<Paycalc />}></Route>
 
-          <Route
-            path="/TimesheetManager"
-            element={<TimesheetManager />}></Route>
+          <Route path="/TimesheetManager" element={<TimesheetManager />}></Route>
 
           <Route path="/daysheet" element={<ButtonEsi />}></Route>
 
@@ -560,32 +553,18 @@ root.render(
 
           <Route path="/Masterroll" element={<MasterrollButton />}></Route>
 
-          <Route
-            path="/payslipgenerator"
-            element={<PayslipGenerator />}></Route>
+          <Route path="/payslipgenerator" element={<PayslipGenerator />}></Route>
 
-          <Route
-            path="/payslipgenerator/payslipnewformat"
-            element={<PayslipNewFormat />}></Route>
+          <Route path="/payslipgenerator/payslipnewformat" element={<PayslipNewFormat />}></Route>
 
-          <Route
-            path="/oldpayslipgenerator"
-            element={<OldPayslipGenerator />}></Route>
+          <Route path="/oldpayslipgenerator" element={<OldPayslipGenerator />}></Route>
 
-          <Route
-            path="/oldpayslipgenerator/oldpayslip"
-            element={<OldPayslip />}></Route>
+          <Route path="/oldpayslipgenerator/oldpayslip" element={<OldPayslip />}></Route>
 
-          <Route
-            path="/medicalslipgenerator/medical"
-            element={<Medical />}></Route>
-          <Route
-            path="/medicalslipgenerator"
-            element={<MedicalSlipGenerator />}></Route>
+          <Route path="/medicalslipgenerator/medical" element={<Medical />}></Route>
+          <Route path="/medicalslipgenerator" element={<MedicalSlipGenerator />}></Route>
 
-          <Route
-            path="/viewmedical/medicalslipview"
-            element={<MedicalSlipView />}></Route>
+          <Route path="/viewmedical/medicalslipview" element={<MedicalSlipView />}></Route>
           <Route path="/viewmedical" element={<ViewMedical />}></Route>
 
           <Route path="/earlyandlatentries" element={<EarlyAndLate />}></Route>
@@ -594,27 +573,21 @@ root.render(
 
           <Route path="/payslipelegant" element={<Payslipelegant />}></Route>
 
-          <Route
-            path="/payslipgenerator/payslipmonthly"
-            element={<Payslipmonthly />}></Route>
+          <Route path="/payslipgenerator/payslipmonthly" element={<Payslipmonthly />}></Route>
         </Route>
         <Route path="/Mastterrol" element={<Mastterrol />}></Route>
         <Route path="/Setup" element={<Setup />}></Route>
         <Route path="/Setup2" element={<Setup2 />}></Route>
         <Route path="/Shiftdetails007" element={<Shiftdetails007 />}></Route>
-        <Route
-          path="/Shiftpatterns0009"
-          element={<Shiftpatterns0009 />}></Route>
+        <Route path="/Shiftpatterns0009" element={<Shiftpatterns0009 />}></Route>
         <Route path="/Leavesettlement" element={<Leavesettlement />}></Route>
         <Route path="/chatbotnew" element={<ChatbotNew/>}></Route>
-        
         <Route path="/GraphCheckBox" element={<GraphCkeckBox1/>}></Route>
         <Route path="/display" element={<Dashboard />} />
-        <Route
-            path="/newdailytimecard"
-            element={<NewDailyTimeCard1 />}></Route>
-       <Route path="/App001" element={<App001/>}></Route>
-       <Route path="/dashboard" element={<DashboardWrapper />} />
+        <Route path="/newdailytimecard" element={<NewDailyTimeCard1 />}></Route>
+        <Route path="/App001" element={<App001/>}></Route>
+        <Route path="/dashboard" element={<DashboardWrapper/>} />
+        <Route path="/customize-dashboard" element={<GraphCheckBox1/>} />
         </Routes>
     </BrowserRouter>
   </Provider>

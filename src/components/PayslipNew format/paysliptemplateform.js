@@ -356,12 +356,12 @@ export default function PaySlipFormTemplate(props) {
                     )}
                     {Dateofjoining && (
                       <Typography variant="body1" style={styleobj.typo}>
-                        <strong> Date of Joining:</strong> {props.DateOfJoining}
+                        <strong> Date of Joining:</strong> {formatDate(props.DateOfJoining)}
                       </Typography>
                     )}
                     {DateofBirth && (
                       <Typography variant="body1" style={styleobj.typo}>
-                        <strong> Date of Birth:</strong> {props.DateOfBirth}
+                        <strong> Date of Birth:</strong> {formatDate(props.DateOfBirth)}
                       </Typography>
                     )}
                     {payperiod && (
@@ -620,7 +620,7 @@ export default function PaySlipFormTemplate(props) {
                   <Typography variant="h6">₹{props.NetSalaryPayable}</Typography>
                   <Typography variant="body1">
                     Total Net Payable: <strong>₹{props.NetSalary}</strong>{" "}
-                    (Rupees Forty-three thousand one hundred and fifty only)
+                    (Rupees )
                   </Typography>
                 </Box>
                 <Divider sx={{ my: 4 }} />

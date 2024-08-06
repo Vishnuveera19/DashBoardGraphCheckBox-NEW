@@ -15,7 +15,7 @@ import {
   FormControlLabel,
 } from "@mui/material";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -39,6 +39,7 @@ export default function PaySlipTemplate(props) {
   const [Holidays, setHolidays] = useState(true);
   const [weekOffDays, setWeekoffdays] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -374,7 +375,7 @@ export default function PaySlipTemplate(props) {
           )}
           {showmonth && (
             <Typography variant="h6" align="center" gutterBottom>
-              Payslip for the month of {props.Month}, 2012
+              Payslip for the month of {props.Month}, 2024
             </Typography>
           )}
         </Box>
@@ -439,7 +440,7 @@ export default function PaySlipTemplate(props) {
               {" "}
               {dateofjoining && (
                 <Typography variant="body1">
-                  <strong>Date Of Joining: {props.DateOfJoining}</strong>{" "}
+                  <strong>Work From Home: {props.WorkFromHome}</strong>{" "}
                 </Typography>
               )}{" "}
             </Grid>{" "}
@@ -757,7 +758,7 @@ export default function PaySlipTemplate(props) {
                 <strong>Gross Earnings</strong>
               </TableCell>
               <TableCell>
-                <strong>{props.GrossEarnings}</strong>
+                <strong> ₹ {props.GrossEarnings}</strong>
               </TableCell>
               <TableCell></TableCell>
             </TableRow>
@@ -767,15 +768,14 @@ export default function PaySlipTemplate(props) {
               </TableCell>
               
               <TableCell>
-                <strong>{props.NetSalaryPayable}</strong>
+                <strong>₹ {props.NetSalaryPayable}</strong>
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell colSpan={8}>
                 <strong>
                   {" "}
-                  Net Salary Payable (In words): Seventeen Thousand Eight
-                  Hundred Only
+                  Net Salary Payable (In words): 
                 </strong>
               </TableCell>
             </TableRow>

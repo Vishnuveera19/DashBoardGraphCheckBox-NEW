@@ -583,7 +583,7 @@ const PayslipNewFormat = (props) => {
               )}
               {dateofjoining && (
                 <Typography variant="h6" align="right">
-                  Date of Joining: {props.DateOfJoining}{" "}
+                  Date of Joining: {formatDate(props.DateOfJoining)}{" "}
                 </Typography>
               )}
             </Grid>

@@ -29,13 +29,13 @@ function Elegant({data}) {
       Address2={data.addressLine2}
       city={data.city}
       zipcode={data.zipcode}
-      Month="July"
+      Month="August"
       EmpNo={data.employeeCode}
       Name={data.employeeFirstName}
       FathersName="Padmanaban"
       Designation={data.designationName}
       Location={data.city}
-      MonthOfPay="July"
+      MonthOfPay="August"
       DateOfBirth="1980-09-23"
       ddate = {data.dDate}
       DateOfJoining={data.joiningDate}
@@ -111,7 +111,7 @@ function Elegant({data}) {
       Deduction9total={data.valueA9}
       Deduction10total={data.valueA10}
       GrossEarnings={data.grossSalary}
-      NetSalaryPayable="12000"
+      NetSalaryPayable={data.netPay}
       />
     </center>
   );
@@ -125,11 +125,11 @@ function Tabular({ data }) {
       Month="July"
       EmpNo={data.employeeCode}
       Name={data.employeeFirstName}
-      FathersName="Padmanaban"
+      FathersName="Pachaiyappan"
       Designation={data.designationName}
       Location={data.city}
       MonthOfPay="July"
-      DateOfBirth="1980-09-23"
+      DateOfBirth="2002-08-26"
       DateOfJoining={data.joiningDate}
       CalcDays={data.calcDays}
       Paiddays={data.paidDays}
@@ -203,7 +203,8 @@ function Tabular({ data }) {
       Deduction9total={data.valueA9}
       Deduction10total={data.valueA10}
       GrossEarnings={data.grossSalary}
-      NetSalaryPayable="12000"
+      NetSalaryPayable={data.netPay}
+      WorkFromHome="0"
     />
   );
 }
@@ -212,7 +213,7 @@ function Classic({data}) {
   return (
     <PayslipNewFormat
       companyname={data.companyName}
-      Month="JULY"
+      Month="AUGUST"
       Address1={data.addressLine1}
       Address2={data.addressLine2}
       city={data.city}
@@ -222,7 +223,7 @@ function Classic({data}) {
       FathersName="Padmanaban"
       Designation={data.designationName}
       Location={data.city}
-      MonthOfPay="July"
+      MonthOfPay="AUGUST"
       DateOfBirth="1980-09-23"
       DateOfJoining={data.joiningDate}
       CalcDays={data.calcDays}
@@ -297,7 +298,7 @@ function Classic({data}) {
       Deduction9total={data.valueA9}
       Deduction10total={data.valueA10}
       GrossEarnings={data.grossSalary}
-      NetSalaryPayable="12000"
+      NetSalaryPayable={data.netPay}
       ddate = {data.dDate}
     />
   );
