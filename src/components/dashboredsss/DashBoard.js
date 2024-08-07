@@ -9,6 +9,7 @@ import EventIcon from '@mui/icons-material/Event';
 import CancelIcon from '@mui/icons-material/Cancel';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import TimerIcon from '@mui/icons-material/Timer';
+import DashboardIcon from '@mui/icons-material/Dashboard'
 import {
   BarChart,
   Bar,
@@ -87,6 +88,10 @@ import { getRequest, postRequest } from '../../serverconfiguration/requestcomp';
 import { ServerConfig } from '../../serverconfiguration/serverconfig';
 import { REPORTS } from '../../serverconfiguration/controllers';
 import { useLocation } from 'react-router-dom';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import GraphCheckBox1 from './GraphCkeckBox';
+import Masonry from '@mui/lab/Masonry';
+
 
 const theme = createMuiTheme({
   typography: {
@@ -113,7 +118,17 @@ const Dashboard = () => {
   const [selectAllCounts, setSelectAllCounts] = useState(false);
 const [selectAllGraphs, setSelectAllGraphs] = useState(false);
 
+  const [openDialog, setOpenDialog] = React.useState(false);
 
+ 
+
+  const handleDialogOpen = () => {
+    setOpenDialog(true);
+  };
+
+  const handleDialogClose = () => {
+    setOpenDialog(false);
+  };
 
 
 
@@ -177,7 +192,7 @@ const [selectAllGraphs, setSelectAllGraphs] = useState(false);
   useEffect(() => {
     async function getPresentData() {
       try {
-        const query = `SELECT COUNT(*) as Present FROM [dbo].[time_card] WHERE CAST([dates] AS DATE) = CAST(GETDATE() AS DATE) AND [status] = 'P'`;
+        const query =  `SELECT COUNT(*) as Present FROM [dbo].[time_card] WHERE CAST([dates] AS DATE) = CAST(GETDATE() AS DATE) AND [status] = 'P'`;
         const response = await postRequest(ServerConfig.url, REPORTS, { query });
         console.log('API Response:', response); // Log the API response
         if (response.data) {
@@ -604,19 +619,39 @@ const [selectAllGraphs, setSelectAllGraphs] = useState(false);
           }
     }
   }).filter((item) => item !== null);
+  
 
   return (
     <div className="header-head">
+      
       <Grid container>
         <ThemeProvider theme={theme}>
           <Grid container maxWidth="lg" margin="auto">
-            <Grid item xs={12}>
+          <Grid container justifyContent="space-between" alignItems="center">
+            <Grid item>
+              {/* Your dashboard title or logo */}
+            </Grid>
+            <Grid item sx={{ position: 'absolute', top: 0, right: 0 }}>
+              <IconButton
+                aria-label="more"
+                onClick={handleDialogOpen}
+              >
+                <MoreVertIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Dialog open={openDialog} onClose={handleDialogClose}>
+          <DialogContent>
+            <GraphCheckBox1 onSave={() => handleDialogClose()} />
+          </DialogContent>
+        </Dialog>
               {/* Render Count fields if any are selected */}
               {filteredData.some((item) => !item.data) && (
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-                    <Card sx={{ width: '900px', height: '300px', bgcolor: 'rgb(236, 237, 240)' }}>
-                      <Grid container spacing={2} sx={{ padding: "20px", width: '100%', height: '100%' }}>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Card sx={{ width: '70%', height: '300px', bgcolor: 'rgb(236, 237, 240)', display: 'flex', justifyContent: 'center', alignItems: 'center', mx: 'auto', my: 'auto' }}>
+                <Grid container spacing={2} sx={{ padding: "20px", width: '100%', height: '100%', flexWrap: 'wrap', justifyContent: 'center' }}>
                         {filteredData.map((item, index) => (
                           // Display only count fields (not graphs)
                           !item.data && (
@@ -701,10 +736,10 @@ const [selectAllGraphs, setSelectAllGraphs] = useState(false);
                   ))}
                 </Grid>
               )}
-            </Grid>
+           
+            </ThemeProvider>
           </Grid>
-        </ThemeProvider>
-      </Grid>
+     
     </div>
   );
 };

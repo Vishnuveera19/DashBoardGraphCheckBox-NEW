@@ -14,7 +14,7 @@ import {
 import { InfoOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
-const GraphCheckBox1 = () => {
+const GraphCheckBox1 = ({ onSave }  ) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const navigate = useNavigate();
 
@@ -73,6 +73,7 @@ const GraphCheckBox1 = () => {
       return option !== 'Select All Counts' && option !== 'Select All Graphs';
     });
     navigate('/dashboard', { state: { selectedOptions: filteredSelectedOptions } });
+    onSave();
   };
 
   return (
